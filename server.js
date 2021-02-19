@@ -19,8 +19,8 @@ const db = knex({
   },
 });
 
-// setup custom port here
-const PORT = process.env.PORT;
+// setup custom port
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
