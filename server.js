@@ -8,6 +8,7 @@ import handleRegister from "./controller/handleRegister.js";
 import handleSignin from "./controller/handleSignin.js";
 import handleProfile from "./controller/handleProfile.js";
 import handleImage from "./controller/handleImage.js";
+import handleClarifaiAPI from "./controller/handleClarifaiAPI.js";
 
 const db = knex({
   client: "pg",
@@ -41,6 +42,9 @@ app.get("/profile/:id", (req, res) => handleProfile(req, res, db));
 
 // -- image entries PUT --
 app.put("/image", (req, res) => handleImage(req, res, db));
+
+// --Clarifai API call
+app.post("/imageURL", (req, res) => handleClarifaiAPI(req, res));
 
 app.listen(PORT, () => {
   console.log(`app is running at port ${PORT}`);
