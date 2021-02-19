@@ -12,10 +12,8 @@ import handleImage from "./controller/handleImage.js";
 const db = knex({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
-    user: "postgres",
-    password: "0818",
-    database: "smart_brain",
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 
@@ -28,7 +26,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 
-//landing
 app.get("/", (req, res) => res.send("this is working"));
 
 // Sign In POST
