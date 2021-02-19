@@ -1,6 +1,9 @@
 {
   "name": "smartbrain_api",
   "version": "1.0.0",
+  "engines": {
+    "node": "15.x"
+  },
   "type": "module",
   "description": "",
   "main": "index.js",
